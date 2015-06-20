@@ -21,22 +21,34 @@ namespace Circles
         {
             int x0 = ClientSize.Width / 2;
             int y0 = ClientSize.Height / 2;
-            int r = 150;
+            int r = 50;
 
-            // Внутренние круги
-            //double a = 3.0;
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    double angle = a * Math.PI / 6.0;
-            Circle circle = new Circle(ClientSize.Width, ClientSize.Height);
-            //circle.X = (int) (r * Math.Sin(angle));
-            circle.X = 0;
-            circle.Y = 0;
-            Graphics gr = CreateGraphics();
-            circle.Draw(gr);
-            //    a += 2.0;
-            //}
+            // Внутреннии круги
+            double a = 3.0;
+            for (int i = 0; i < 6; i++)
+            {
+                double angle = a * Math.PI / 6.0;
+                Circle circle = new Circle(ClientSize.Width, ClientSize.Height, 40);
+                circle.X = (int) (r * Math.Cos(angle));
+                circle.Y = (int)(r * Math.Sin(angle));
+                Graphics gr = CreateGraphics();
+                circle.Draw(gr);
+                a += 2.0;
+            }
 
+            // Внешнии круги
+            a = 3.0;
+            r = 150;
+            for (int i = 0; i < 6; i++)
+            {
+                double angle = a * Math.PI / 6.0;
+                Circle circle = new Circle(ClientSize.Width, ClientSize.Height, 40);
+                circle.X = (int)(r * Math.Sin(angle));
+                circle.Y = (int)(r * Math.Cos(angle));
+                Graphics gr = CreateGraphics();
+                circle.Draw(gr);
+                a += 2.0;
+            }
         }
     }
 }
