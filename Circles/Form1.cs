@@ -28,20 +28,15 @@ namespace Circles
             //for (int i = 0; i < 6; i++)
             //{
             //    double angle = a * Math.PI / 6.0;
-                Circle circle = new Circle(ClientSize.Height);
-                //circle.X = (int) (r * Math.Sin(angle));
-                circle.X = 0;
-                circle.Y = 0;
-                Graphics gr = CreateGraphics();
-                circle.Draw(gr);
+            Circle circle = new Circle(ClientSize.Width, ClientSize.Height);
+            //circle.X = (int) (r * Math.Sin(angle));
+            circle.X = 0;
+            circle.Y = 0;
+            Graphics gr = CreateGraphics();
+            circle.Draw(gr);
             //    a += 2.0;
             //}
 
-            Console.WriteLine(Math.PI);
-
-            int d = 50;
-            int x = x0 - d / 2;
-            int y = y0 - d / 2;
         }
     }
 }

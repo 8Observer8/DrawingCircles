@@ -12,19 +12,24 @@ namespace Circles
         private int x;
         private int y;
         private int diameter;
+        private int windowWidth;
         private int windowHeight;
 
-        public Circle(int windowHeight, int diameter = 50)
+        public Circle(
+            int windowWidth,
+            int windowHeight,
+            int diameter = 50)
         {
-            this.diameter = diameter;
+            this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
+            this.diameter = diameter;
         }
 
         public int X
         {
             set
             {
-                x = value;
+                x = value + windowWidth / 2;
             }
             
             get { return x; }
@@ -34,7 +39,7 @@ namespace Circles
         {
             set
             {
-                y = windowHeight - value;
+                y = value + windowHeight / 2;
             }
 
             get { return y; }
